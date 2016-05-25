@@ -1,13 +1,15 @@
 # Avaamo Java Bot SDK
 
 #### Download and add library
-Avaamo Java Bot SDK is a single jar file. You can download it here
+Avaamo Java Bot SDK is a single jar file, avaamo.jar.
 
 The java sdk requires the following 3 libraries as dependencies.
 
-* javaee-api-7.0.jar [ Download ](https://github.com/jbt/markdown-editor)
+* javaee-api-7.0.jar 
 * javax.json-1.0.4.jar
 * tyrus-standalone-client-1.12.jar
+
+[ Download SDK + Dependencies ](avaamo_java_1.0.zip)
 
 #### Receiving Messages
 
@@ -21,24 +23,26 @@ Initialize the library with your BOT UUID and Access Token.
 ```java
 avaamo = new Avaamo(<YOUR-BOT-UUID>, <YOUR-BOT-ACCESS-TOKEN>);
 
-avaamo.addEventHandler(new Avaamo.EventHandler() {
-public void handleEvent(String message) {
-try{
-if (message.contains("phx_reply")){
-System.out.println("==> response: "+ message );
+avaamo.addEventHandler(new Avaamo.MessageHandler() {
+	@Override
+	public void handleMessage(IncomingMessageModel message) {
+		try{
+			String content = message.message.content;
+			System.out.println("\n==> "+message.user.firstName+": "+ content);					
+			
+		}catch (Exception error){
+			error.printStackTrace();
+			System.err.println("Error processing the message."+ error.getMessage());
+		}
 
-}else if (message.contains("read_ack")){
-System.out.println("==> read_ack: "+message);
-}
-else{
-System.out.println("==> message: "+message);
-}
-}catch (Exception error){
-System.err.println("Error "+ error.getMessage());
-}
-
-}
+	}
+	
+	@Override
+	public void handleReadAck(ReadAckModel readAckModel) {
+		System.out.println("Incoming read ack for message uuid : " + readAckModel.read_ack.message_uuid );
+	}
 });
+
 ```
 #### Sending Messages
 
@@ -70,7 +74,6 @@ avaamo.sendFileAttachment(fileAttachment, cuuid);
 CardAttachment cardAttachment = new CardAttachment();
 cardAttachment.setTitle("Card Title");
 cardAttachment.setDescription("Card Description. This has minimal rich text capabilities as well. For example <b>Bold</b> <i>Italics</i>");
-cardAttachment.setURL("http://www.avaamo.com");
 cardAttachment.addLink(new CardAttachment.WebpageCardLink("Web URL", "http://www.avaamo.com"));
 cardAttachment.addLink(new CardAttachment.SendMessageDeeplink("Post a Message", "Sample Action"));
 cardAttachment.addLink(new CardAttachment.SendFormToConversationDeeplink("Open a Form", "63c906c3-553e-9680-c273-28d1e54da050", "Say Yes", null));
