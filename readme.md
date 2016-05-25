@@ -9,7 +9,7 @@ The java sdk requires the following 3 libraries as dependencies.
 * javax.json-1.0.4.jar
 * tyrus-standalone-client-1.12.jar
 
-[ Download SDK + Dependencies ](avaamo_java_1.0.zip)
+[ Download SDK + Dependencies ](https://github.com/avaamo/java/blob/master/avaamo_java_1.0.zip?raw=true)
 
 #### Receiving Messages
 
