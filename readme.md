@@ -22,22 +22,22 @@ Initialize the library with your BOT UUID and Access Token.
 avaamo = new Avaamo(<YOUR-BOT-UUID>, <YOUR-BOT-ACCESS-TOKEN>);
 
 avaamo.addEventHandler(new Avaamo.EventHandler() {
-	public void handleEvent(String message) {
-		try{
-			if (message.contains("phx_reply")){
-				System.out.println("==> response: "+ message );
+public void handleEvent(String message) {
+try{
+if (message.contains("phx_reply")){
+System.out.println("==> response: "+ message );
 
-			}else if (message.contains("read_ack")){
-				System.out.println("==> read_ack: "+message);
-			}
-			else{
-				System.out.println("==> message: "+message);
-			}
-		}catch (Exception error){
-			System.err.println("Error "+ error.getMessage());
-		}
+}else if (message.contains("read_ack")){
+System.out.println("==> read_ack: "+message);
+}
+else{
+System.out.println("==> message: "+message);
+}
+}catch (Exception error){
+System.err.println("Error "+ error.getMessage());
+}
 
-	}
+}
 });
 ```
 #### Sending Messages
@@ -46,3 +46,11 @@ avaamo.addEventHandler(new Avaamo.EventHandler() {
 // message is the JSON string
 avaamo.sendMessage(message)
 ```
+
+#### Sending an image
+
+```java
+// message is the JSON string
+avaamo.sendMessage(message)
+```
+![image](image.jpg)
