@@ -50,7 +50,31 @@ avaamo.sendMessage(message)
 #### Sending an image
 
 ```java
-// message is the JSON string
-avaamo.sendMessage(message)
+Image image = new Image(new File("test_image.jpg"));
+image.setCaption("This is the image caption");
+avaamo.sendImage(image, cuuid);
 ```
-![image](image.jpg)
+![image](image.png)
+
+#### Sending a file
+
+```java
+FileAttachment fileAttachment = new FileAttachment(new File("TestFile.txt"));
+avaamo.sendFileAttachment(fileAttachment, cuuid);
+```
+![image](file.png)
+
+#### Sending a card
+
+```java
+CardAttachment cardAttachment = new CardAttachment();
+cardAttachment.setTitle("Card Title");
+cardAttachment.setDescription("Card Description. This has minimal rich text capabilities as well. For example <b>Bold</b> <i>Italics</i>");
+cardAttachment.setURL("http://www.avaamo.com");
+cardAttachment.addLink(new CardAttachment.WebpageCardLink("Web URL", "http://www.avaamo.com"));
+cardAttachment.addLink(new CardAttachment.SendMessageDeeplink("Post a Message", "Sample Action"));
+cardAttachment.addLink(new CardAttachment.SendFormToConversationDeeplink("Open a Form", "63c906c3-553e-9680-c273-28d1e54da050", "Say Yes", null));
+cardAttachment.setShowcaseImage(new File("test_image.jpg"));
+avaamo.sendCardAttachment(cardAttachment, cuuid);
+```
+![image](card.png)
