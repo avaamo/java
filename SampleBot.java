@@ -8,7 +8,7 @@ import com.avaamo.java.attachments.Image;
 import com.avaamo.java.models.IncomingMessageModel;
 import com.avaamo.java.models.ReadAckModel;
 
-public class BotApp {
+public class SampleBot {
 
 	static Avaamo avaamo;
 

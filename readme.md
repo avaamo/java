@@ -12,7 +12,7 @@ The java sdk requires the following 3 libraries as dependencies.
 * javax.json-1.0.4.jar
 * tyrus-standalone-client-1.12.jar
 
-[ Download SDK + Dependencies ](https://github.com/avaamo/java/blob/master/avaamo_java_1.0.zip?raw=true)
+[ Download ](https://github.com/avaamo/java/blob/master/avaamo_java_1.0.zip?raw=true) SDK + Dependencies
 
 #### Receiving Messages
 
@@ -61,7 +61,7 @@ Image image = new Image(new File("test_image.jpg"));
 image.setCaption("This is the image caption");
 avaamo.sendImage(image, cuuid);
 ```
-![image](image.png)
+![image](screenshots/image.png)
 
 #### Sending a file
 
@@ -69,7 +69,7 @@ avaamo.sendImage(image, cuuid);
 FileAttachment fileAttachment = new FileAttachment(new File("TestFile.txt"));
 avaamo.sendFileAttachment(fileAttachment, cuuid);
 ```
-![image](file.png)
+![image](screenshots/file.png)
 
 #### Sending a card
 
@@ -83,4 +83,8 @@ cardAttachment.addLink(new CardAttachment.SendFormToConversationDeeplink("Open a
 cardAttachment.setShowcaseImage(new File("test_image.jpg"));
 avaamo.sendCardAttachment(cardAttachment, cuuid);
 ```
-![image](card.png)
+![image](screenshots/card.png)
+
+#### Sample Bot
+
+This [file](https://github.com/avaamo/java/blob/master/SampleBot.java?raw=true) has the full example referred in this page.
