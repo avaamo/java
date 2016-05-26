@@ -1,5 +1,8 @@
 # Avaamo Java Bot SDK
 
+Before start developing a bot you should first create a bot in the Avaamo Dashboard.
+Follow the steps in this [Getting Started](https://github.com/avaamo/java/wiki) page to create a bot in the dashboard.
+
 #### Download and add library
 Avaamo Java Bot SDK is a single jar file, avaamo.jar.
 
