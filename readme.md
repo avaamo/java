@@ -14,6 +14,10 @@ The java sdk requires the following 3 libraries as dependencies.
 
 [ Download ](https://github.com/avaamo/java/blob/master/avaamo_java_1.0.zip?raw=true) SDK + Dependencies
 
+#### Sample Bot
+
+This [file](https://github.com/avaamo/java/blob/master/SampleBot.java?raw=true) has the full example referred in this page.
+
 #### Receiving Messages
 
 Import Avaamo java package.
@@ -85,6 +89,3 @@ avaamo.sendCardAttachment(cardAttachment, cuuid);
 ```
 ![image](screenshots/card.png)
 
-#### Sample Bot
-
-This [file](https://github.com/avaamo/java/blob/master/SampleBot.java?raw=true) has the full example referred in this page.
