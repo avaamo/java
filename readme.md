@@ -6,7 +6,7 @@ Follow the steps in this [Getting Started](https://github.com/avaamo/java/wiki) 
 #### Download and add library
 Avaamo Java Bot SDK is a single jar file, avaamo.jar.
 
-[ Download ](https://github.com/avaamo/java/blob/master/avaamo.jar?raw=true) SDK + Dependencies
+[ Download ](https://github.com/avaamo/java/blob/master/avaamo.jar?raw=true) SDK
 
 #### Sample Bot
 
