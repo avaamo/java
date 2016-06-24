@@ -57,7 +57,6 @@ avaamo.addEventHandler(new Avaamo.MessageHandler() {
 #### Sending Messages
 
 ```java
-// message is the JSON string
 avaamo.sendMessage(message)
 ```
 
