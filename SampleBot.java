@@ -22,12 +22,9 @@ public class SampleBot {
 
 	static Avaamo avaamo;
 
-	static String bot_uuid = "0f34af86-3310-4b0d-aeac-3b9e7eab84f2";
-	static String access_token = "m1Mvdhj4HF3awFQ2InVTpSJ1tGy5efba";
+	static String bot_uuid = "<BOT UUID>";
+	static String access_token = "<ACCESS TOKEN>";
 	
-//	static String bot_uuid = "1b1fa0ef-4f01-47d8-9959-d62a5fac2593";
-//	static String access_token = "tVq-9ceBf0laP7S0CThH9jnc4QR6PQzG";
-
 	public static void main(String[] args) throws Exception {
 
 		/**  
