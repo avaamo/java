@@ -34,19 +34,19 @@ avaamo.addEventHandler(new Avaamo.MessageHandler() {
 		try{
 			String content = message.message.content;
 			System.out.println("\n==> "+message.user.firstName+": "+ content);					
-			
+
 		}catch (Exception error){
 			error.printStackTrace();
 			System.err.println("Error processing the message."+ error.getMessage());
 		}
 
 	}
-	
+
 	@Override
 	public void handleReadAck(ReadAckModel readAckModel) {
 		System.out.println("Incoming read ack for message uuid : " + readAckModel.read_ack.message_uuid );
 	}
-	
+
 	@Override
 	public void handleActivity(Activity activity) {
 		System.out.println("Incoming activity from user : " + activity.user.firstName + " " + activity.user.lastName );
@@ -143,13 +143,13 @@ if(message.message.attachment instanceof FormAttachmentResponse){
 				System.out.println("Number of images attached: " + imageGroupData.fileNames.length);
 			}
 			break;
-		
+
 		case PICKLIST:
 		case POLL:
 			if(question.reply.replyData instanceof OptionData){
 				OptionData optionData = (OptionData) question.reply.replyData;
 				System.out.println("selected option uuid : "+ optionData.option_uuid);
-				
+
 			}
 			break;
 		}
@@ -158,4 +158,17 @@ if(message.message.attachment instanceof FormAttachmentResponse){
 }
 
 ```
+#### Other APIs
 
+##### Get list of all conversations
+
+```
+AvaamoApi api = AvaamoApi.getInstance(bot_uuid, access_token);
+api.getConversations(current_page, per_page);
+```
+
+##### Get list of all messages for a conversations
+```
+AvaamoApi api = AvaamoApi.getInstance(bot_uuid, access_token);
+api.getMessages(current_page, per_page, "conversation_uuid");
+```
