@@ -162,13 +162,13 @@ if(message.message.attachment instanceof FormAttachmentResponse){
 
 ##### Get list of all conversations
 
-```
+```java
 AvaamoApi api = AvaamoApi.getInstance(bot_uuid, access_token);
 api.getConversations(current_page, per_page);
 ```
 
 ##### Get list of all messages for a conversations
-```
+```java
 AvaamoApi api = AvaamoApi.getInstance(bot_uuid, access_token);
-api.getMessages(current_page, per_page, "conversation_uuid");
+api.getMessages(current_page, per_page, conversation_uuid);
 ```
