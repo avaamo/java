@@ -1,0 +1,11 @@
+com.avaamo.java
+com.avaamo.java.attachments
+com.avaamo.java.models
+com.avaamo.java.models.form
+com.avaamo.java.models.input.cards
+com.avaamo.java.network
+com.avaamo.java.network.response
+com.avaamo.java.network.response.bing
+com.avaamo.java.network.response.converters
+com.avaamo.java.test
+com.avaamo.java.utils
